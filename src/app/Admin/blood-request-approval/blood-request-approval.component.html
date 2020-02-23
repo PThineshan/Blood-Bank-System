@@ -1,0 +1,166 @@
+<!-- <div class="center">
+  <ul class="list">
+    <li
+      *ngFor="let request of requests"
+      [class.selected]="request === selectedRequest"
+      (click)="onSelect(request)"
+    >
+      <span class="badge">$</span>{{ request.patientName }}
+    </li>
+
+    <div *ngIf="selectedRequest">
+      <form (submit)="onFormSubmit()" class="container">
+        <label>ReqDate</label>
+        {{ selectedRequest.reqDate }} <br />
+        <label>Purpose</label>{{ selectedRequest.purpose }} <br />
+
+        <select [(ngModel)]="status" name="status">
+          <option value="Accept">Accept</option>
+          <option value="Reject">Reject</option>
+        </select>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br />
+    </div>
+  </ul>
+</div> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-3"><app-admin-sidebar></app-admin-sidebar></div>
+    <div class="col-md-9">
+      <div><h3 style="text-align: center;">Blood Request Approval</h3></div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="container">
+            <div class="list-group">
+              <img
+                src="http://www.free-icons-download.net/images/commercial-male-user-icon-32765.png"
+              />
+              <a class="list-group-item list-group-item-action active">
+                Patient's Blood Requests
+              </a>
+              <a
+                *ngFor="let request of requests"
+                [class.selected]="request === selectedRequest"
+                (click)="onSelect(request)"
+                class="list-group-item list-group-item-action"
+                >{{ request.patientName }}</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="container">
+            <div *ngIf="selectedRequest">
+              <div><h5>Patient's Information</h5></div>
+              <b>Patient Full Name: </b> {{ selectedRequest.patientName }}<br />
+              <b>Blood Group: </b> {{ selectedRequest.bloodGroup }}<br />
+              <b>District: </b> {{ selectedRequest.city }}<br />
+              <b>When Required: </b> {{ selectedRequest.reqDate }} <br />
+
+              <div><h5>Contact Details</h5></div>
+              <b>E-mail: </b> {{ selectedRequest.email }}<br />
+              <b>Phone Number: </b> {{ selectedRequest.phoneNo }}<br />
+              <b>Hospital Name: </b> {{ selectedRequest.hospitalName }}<br />
+              <b>Address: </b> {{ selectedRequest.address }}<br />
+              <b>Purpose: </b> {{ selectedRequest.purpose }}<br />
+              <form (submit)="onFormSubmit()">
+                <div class="form-group row">
+                  <label for="status" class="col-sm-1 col-form-label"
+                    >Status:
+                  </label>
+                  <div class="col-sm-4">
+                    <select
+                      [(ngModel)]="status"
+                      name="status"
+                      id="status"
+                      class="form-control"
+                    >
+                      <option value="Accept">Accept</option>
+                      <option value="Reject">Reject</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div>
+  <h3 style="text-align: center;">Blood Request Approval</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="container">
+      <div class="list-group">
+        <a
+          class="list-group-item list-group-item-action list-group-item-light active"
+        >
+          Patient's Blood Requests
+        </a>
+        <a
+          *ngFor="let request of requests"
+          [class.selected]="request === selectedRequest"
+          (click)="onSelect(request)"
+          class="list-group-item list-group-item-action"
+          >{{ request.patientName }}</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-5">
+    <div class="container">
+      <flash-messages></flash-messages>
+      <div *ngIf="selectedRequest">
+        <div><h5>Patient's Information</h5></div>
+        <b>Patient Full Name: </b> {{ selectedRequest.patientName }}<br />
+        <b>Blood Group: </b> {{ selectedRequest.bloodGroup }}<br />
+        <b>District: </b> {{ selectedRequest.city }}<br />
+        <b>When Required: </b> {{ selectedRequest.reqDate }} <br />
+
+        <div><h5>Contact Details</h5></div>
+        <b>E-mail: </b> {{ selectedRequest.email }}<br />
+        <b>Phone Number: </b> {{ selectedRequest.phoneNo }}<br />
+        <b>Hospital Name: </b> {{ selectedRequest.hospitalName }}<br />
+        <b>Address: </b> {{ selectedRequest.address }}<br />
+        <b>Purpose: </b> {{ selectedRequest.purpose }}<br />
+        <form #myForm="ngForm" (ngSubmit)="onFormSubmit(myForm.value)">
+          <div class="form-group row">
+            <label for="status" class="col-sm-2 col-form-label">Status: </label>
+            <div class="col-sm-3">
+              <select
+                [(ngModel)]="status"
+                name="status"
+                id="status"
+                class="form-control"
+                required
+              >
+                <option value="Accept">Accept</option>
+                <option value="Reject">Reject</option>
+                <option value="Reject">Waiting</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <button routerLink="/admin" type="button" class="btn btn-outline-dark">
+      Back to Admin
+    </button>
+  </div>
+</div>

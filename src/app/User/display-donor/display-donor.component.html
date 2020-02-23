@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"><app-user-sidebar></app-user-sidebar></div>
+    <div class="col-md-9">
+      <div><h3 style="text-align: center;">Donor Details</h3></div>
+      <div class="table-responsive">
+        <div>
+          <input
+            class="form-control"
+            type="text"
+            name="search"
+            [(ngModel)]="searchText"
+            placeholder="Search ...."
+          />
+        </div>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Blood Group</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Date of Birth</th>
+              <th>Gender</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let donor of donorList | filter: searchText">
+              <td>{{ donor.firstName }} {{ donor.lastName }}</td>
+              <td>{{ donor.bloodGroup }}</td>
+              <td>{{ donor.address }}</td>
+              <td>{{ donor.city }}</td>
+              <td>{{ donor.phoneNo }}</td>
+              <td>{{ donor.email }}</td>
+              <td>{{ donor.dob }}</td>
+              <td>{{ donor.gender }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

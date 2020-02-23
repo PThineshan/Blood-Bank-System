@@ -1,0 +1,111 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="container">
+        <div><h3 style="text-align: center">Contact Us</h3></div>
+        <p class="text-center w-responsive mx-auto mb-5">
+          Do you have any questions? Please do not hesitate to contact us
+          directly. Our team will come back to you within a matter of hours to
+          help you.
+        </p>
+        <flash-messages></flash-messages>
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+          <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label"
+              >Your Name:
+            </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="name"
+                id="name"
+                name="name"
+                type="text"
+                class="form-control"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+
+          <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label"
+              >Your Email:
+            </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="email"
+                id="email"
+                name="email"
+                type="text"
+                class="form-control"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="subject" class="col-sm-2 col-form-label"
+              >Subject:
+            </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="subject"
+                id="subject"
+                name="subject"
+                type="text"
+                class="form-control"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="message" class="col-sm-2 col-form-label"
+              >Your Message:
+            </label>
+            <div class="col-sm-10">
+              <textarea
+                [(ngModel)]="message"
+                id="message"
+                name="message"
+                type="text"
+                class="form-control"
+                placeholder=""
+                required
+              ></textarea>
+            </div>
+          </div>
+          <!-- form-group end.// -->
+
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-outline-dark">
+                Send
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <br /><br /><br /><br /><br />
+      <p><i class="material-icons">location_on</i><b> Address</b></p>
+      <p>City Center 8th floor,Lotus street, Jaffna, Srilanka.</p>
+
+      <p><i class="material-icons">local_phone</i><b> Lets Talk</b></p>
+      <p>+94 1124566789</p>
+
+      <p><i class="material-icons">mail</i><b> General Support</b></p>
+      <p>bloodbank@gmail.com</p>
+    </div>
+  </div>
+</div>

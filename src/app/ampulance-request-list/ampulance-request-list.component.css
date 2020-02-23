@@ -1,0 +1,10 @@
+.table tr:not(.fble_htr) {
+    counter-increment: rowNumber;
+  }
+  
+  .table tr:not(.fble_htr) td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+  }
+  

@@ -1,0 +1,178 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"><app-admin-sidebar></app-admin-sidebar></div>
+    <div class="col-sm-9">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a class="nav-link" routerLink="/ampulance-detail"
+                ><h5>Add Ampulance</h5>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" routerLink="/ampulance-list"
+                ><h5>Ampulance List</h5>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/ampulance-request"
+                ><h5>Ampulance Request</h5>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" routerLink="/ampulance-request-list"
+                ><h5>Ampulance Request List</h5>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <br />
+      <flash-messages></flash-messages>
+      <div class="container">
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+          <div class="form-group row">
+            <label for="ampulance" class="col-sm-2 col-form-label">
+              Ampulance:
+            </label>
+            <div class="col-sm-10">
+              <select
+                [(ngModel)]="ampulance"
+                name="ampulance"
+                id="ampulance"
+                class="form-control"
+              >
+                <option
+                  *ngFor="let ampulance of ampulanceDetails"
+                  [ngValue]="ampulance.ampulanceId"
+                >
+                  {{ ampulance.ampulanceId }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="patient" class="col-sm-2 col-form-label"
+              >Patient Name:
+            </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="patient"
+                id="patient"
+                name="patient"
+                type="text"
+                class="form-control"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="address" class="col-sm-2 col-form-label"
+              >Address:
+            </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="address"
+                id="address"
+                name="address"
+                type="text"
+                class="form-control"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="charge" class="col-sm-2 col-form-label"
+              >Charges:
+            </label>
+            <div class="col-sm-10">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+                <input
+                  [(ngModel)]="charge"
+                  id="charge"
+                  name="charge"
+                  type="number"
+                  class="form-control"
+                  placeholder=""
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="date" class="col-sm-2 col-form-label"
+              >Request Date:
+            </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="date"
+                id="date"
+                name="date"
+                type="date"
+                class="form-control"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="time" class="col-sm-2 col-form-label"
+              >Request Time:
+            </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="rtime"
+                id="time"
+                name="rtime"
+                type="time"
+                class="form-control"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="time" class="col-sm-2 col-form-label"
+              >Dispatch Time:
+            </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="dtime"
+                id="time"
+                name="dtime"
+                type="time"
+                class="form-control"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <div class="row">
+                <div class="col-sm-6"></div>
+                <div class="col-sm-6">
+                  <button type="submit" class="btn btn-outline-dark">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

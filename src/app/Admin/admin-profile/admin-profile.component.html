@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"><app-admin-sidebar></app-admin-sidebar></div>
+    <div class="col-md-9">
+      <div class="card-header">
+        Your Profile
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-4">
+          <img
+            src="https://cdn.pixabay.com/photo/2013/07/12/12/02/people-145129_960_720.png"
+            class="card-img-top"
+            style="height: 8cm"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ user.username }}</h5>
+            <p class="card-text">
+              <b>Name: </b> {{ user.firstName }} {{ user.lastName }}<br />
+              <b>Account Type: </b> {{ user.accountType }} <br />
+              <b>E-mail: </b> {{ user.email }}<br />
+              <b>Phone Number: </b> {{ user.phoneNo }}<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

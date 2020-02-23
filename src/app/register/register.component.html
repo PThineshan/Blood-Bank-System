@@ -1,0 +1,211 @@
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+/>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-9">
+      <a routerLink="/login" class="float-right btn btn-outline-dark mt-1"
+        >Log in</a
+      >
+      <h4 class="card-title mt-2">Registration Form</h4>
+
+      <form #myForm="ngForm" (ngSubmit)="onRegisterSubmit(myForm.value)">
+        <div class="form-row">
+          <div class="col form-group">
+            <label for="firstname">First name </label>
+            <input
+              [(ngModel)]="firstName"
+              id="firstname"
+              name="firstName"
+              type="text"
+              class="form-control"
+              placeholder=""
+              required
+            />
+          </div>
+          <!-- form-group end.// -->
+          <div class="col form-group">
+            <label for="lastname">Last name</label>
+            <input
+              [(ngModel)]="lastName"
+              id="lastname"
+              name="lastName"
+              type="text"
+              class="form-control"
+              placeholder=""
+              required
+            />
+          </div>
+          <!-- form-group end.// -->
+        </div>
+        <!-- form-row end.// -->
+        <div class="form-group">
+          <label for="accounttype">AccountType</label>
+          <select
+            [(ngModel)]="accountType"
+            name="accountType"
+            id="accounttype"
+            class="form-control"
+          >
+            <option value=""></option>
+            <option value="Donor">Donor</option>
+            <option value="User">User</option>
+          </select>
+        </div>
+        <!-- form-group end.// -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            [(ngModel)]="email"
+            name="email"
+            id="email"
+            type="email"
+            class="form-control"
+            required
+          />
+        </div>
+        <!-- form-group end.// -->
+        <div class="form-group">
+          <label for="bday">Date of Birth </label>
+          <input
+            [(ngModel)]="dob"
+            id="bday"
+            name="dob"
+            type="date"
+            class="form-control"
+            placeholder=""
+            required
+          />
+        </div>
+        <!-- form-group end.// -->
+
+        <div class="form-group">
+          <label for="male" class="form-check form-check-inline">
+            <input
+              [(ngModel)]="gender"
+              id="male"
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              value="male"
+            />
+            <span class="form-check-label"> Male </span>
+          </label>
+          <label for="female" class="form-check form-check-inline">
+            <input
+              [(ngModel)]="gender"
+              id="female"
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              value="female"
+            />
+            <span class="form-check-label"> Female</span>
+          </label>
+        </div>
+        <!-- form-group end.// -->
+        <div class="form-group">
+          <label for="phonenumber">Phone Number</label>
+          <div class="input-group-prepend">
+            <span class="input-group-text">+94</span>
+            <input
+              [(ngModel)]="phoneNo"
+              id="phonenumber"
+              name="phoneNo"
+              type="text"
+              class="form-control"
+              placeholder=""
+              required
+            />
+          </div>
+          <small>format: +94999999999 </small>
+        </div>
+        <!-- form-group end.// -->
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input
+            [(ngModel)]="address"
+            id="address"
+            name="address"
+            type="text"
+            class="form-control"
+            placeholder=""
+            required
+          />
+        </div>
+        <!-- form-group end.// -->
+        <div class="form-group">
+          <label for="city">District</label>
+          <input
+            [(ngModel)]="city"
+            id="city"
+            name="city"
+            type="text"
+            class="form-control"
+            required
+          />
+        </div>
+        <!-- form-group end.// -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            [(ngModel)]="username"
+            id="username"
+            name="username"
+            type="text"
+            class="form-control"
+            placeholder=""
+            required
+          />
+        </div>
+        <!-- form-group end.// -->
+        <div class="form-group">
+          <label for="password">Create password</label>
+          <input
+            [(ngModel)]="password"
+            id="password"
+            name="password"
+            class="form-control"
+            type="password"
+            required
+          />
+        </div>
+        <!-- form-group end.// -->
+        <div class="form-group">
+          <label for="bloodgroup">Blood Group</label>
+          <select
+            [(ngModel)]="bloodGroup"
+            name="bloodGroup"
+            id="bloodgroup"
+            class="form-control"
+          >
+            <option value=""></option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+        </div>
+        <!-- form-group end.// -->
+        <flash-messages></flash-messages>
+        <div class="form-group">
+          <button type="submit" class="btn btn-info btn-block">
+            Register
+          </button>
+        </div>
+        <!-- form-group// -->
+      </form>
+      <div class="border-top card-body text-center">
+        Have an account? <a routerLink="/login">Log In</a>
+      </div>
+    </div>
+    <!-- row.//-->
+  </div>
+  <!--container end.//-->
+</div>

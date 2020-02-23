@@ -1,0 +1,166 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"><app-admin-sidebar></app-admin-sidebar></div>
+    <div class="col-sm-9">
+      <div class="container">
+        <div><h3 style="text-align: center">Blood Bank Registration</h3></div>
+        <flash-messages></flash-messages>
+        <form #myForm="ngForm" (ngSubmit)="onBloodBankSubmit(myForm.value)">
+          <div class="form-group row">
+            <label for="bankName" class="col-sm-2 col-form-label"
+              >Blood Bank Name:
+            </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="bankName"
+                id="bankName"
+                name="bankName"
+                type="text"
+                class="form-control"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="hn" class="col-sm-2 col-form-label"
+              >Hospital Name:
+            </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="hospitalName"
+                id="hn"
+                name="hospitalName"
+                type="text"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+
+          <div class="form-group row">
+            <label for="district" class="col-sm-2 col-form-label"
+              >District:
+            </label>
+            <div class="col-sm-10">
+              <select
+                [(ngModel)]="district"
+                name="district"
+                id="district"
+                class="form-control"
+              >
+                <option value="Jaffna">Jaffna</option>
+                <option value="Kilinochchi">Kilinochchi</option>
+                <option value="Mannar">Mannar</option>
+                <option value="Mullaitivu">Mullaitivu</option>
+                <option value="Vavuniya">Vavuniya</option>
+                <option value="Puttalam">Puttalam</option>
+                <option value="Kurunegala">Kurunegala</option>
+                <option value="Gampaha">Gampaha</option>
+                <option value="Colombo">Colombo</option>
+                <option value="Kalutara">Kalutara</option>
+                <option value="Anuradhapura">AnuradhapuraPolonnaruwa</option>
+                <option value="Polonnaruwa">Polonnaruwa</option>
+                <option value="Matale">Matale</option>
+                <option value="Kandy">Kandy</option>
+                <option value="Nuwara Eliya">Nuwara Eliya</option>
+                <option value="Kegalle">Kegalle</option>
+                <option value="Ratnapura">Ratnapura</option>
+                <option value="Trincomalee">Trincomalee</option>
+                <option value="Batticaloa">Batticaloa</option>
+                <option value="Ampara">Ampara</option>
+                <option value="Badulla">Badulla</option>
+                <option value="Monaragala">Monaragala</option>
+                <option value="Hambantota">Hambantota</option>
+                <option value="Matara">Matara</option>
+                <option value="Galle">Galle</option>
+              </select>
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="address" class="col-sm-2 col-form-label"
+              >Address:
+            </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="address"
+                id="address"
+                name="address"
+                type="text"
+                class="form-control"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Email: </label>
+            <div class="col-sm-10">
+              <input
+                [(ngModel)]="email"
+                name="email"
+                id="email"
+                type="email"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="phonenumber" class="col-sm-2 col-form-label"
+              >Phone:
+            </label>
+            <div class="col-sm-10">
+              <div class="input-group-prepend">
+                <span class="input-group-text">+94</span>
+                <input
+                  [(ngModel)]="phoneNo"
+                  id="phonenumber"
+                  name="phoneNo"
+                  type="text"
+                  class="form-control"
+                  placeholder=""
+                  required
+                />
+              </div>
+              <small>format: +94776453645 </small>
+            </div>
+          </div>
+          <!-- form-group end.// -->
+          <div class="form-group row">
+            <label for="fax" class="col-sm-2 col-form-label">Fax: </label>
+
+            <div class="col-sm-10">
+              <div class="input-group-prepend">
+                <span class="input-group-text">+94</span>
+                <input
+                  [(ngModel)]="fax"
+                  name="fax"
+                  id="fax"
+                  type="fax"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <small>format: +94112912879 </small>
+            </div>
+          </div>
+          <!-- form-group end.// -->
+
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-outline-dark">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

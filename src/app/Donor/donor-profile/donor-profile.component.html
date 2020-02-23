@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"><app-donor-sidebar></app-donor-sidebar></div>
+    <div class="col-md-9">
+      <div class="card-header">
+        Your Profile
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-4">
+          <img
+            src="https://cdn.pixabay.com/photo/2014/04/03/10/32/user-310807_1280.png"
+            class="card-img-top"
+          />
+          <h1 style="color: red;text-align: center">{{ user.bloodGroup }}</h1>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ user.username }}</h5>
+            <p class="card-text">
+              <b>Name: </b> {{ user.firstName }} {{ user.lastName }}<br />
+              <b>Account Type: </b> {{ user.accountType }} <br />
+              <b>Address: </b> {{ user.address }}<br />
+              <b>City: </b> {{ user.city }}<br />
+              <b>E-mail: </b> {{ user.email }}<br />
+              <b>Date Of Birth: </b> {{ user.dob }}<br />
+              <b>Phone Number: </b> {{ user.phoneNo }}<br />
+              <b>Gender: </b> {{ user.gender }}<br />
+              <b>Blood Group: </b> {{ user.bloodGroup }}<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

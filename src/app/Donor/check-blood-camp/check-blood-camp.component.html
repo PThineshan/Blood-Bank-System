@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"><app-donor-sidebar></app-donor-sidebar></div>
+    <div class="col-sm-9">
+      <div class="container">
+        <div><h3 style="text-align: center">Blood Donation Camps</h3></div>
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+          <div class="form-group row">
+            <label for="district" class="col-sm-2 col-form-label"
+              >Select District:
+            </label>
+            <div class="col-sm-10">
+              <select
+                [(ngModel)]="district"
+                name="district"
+                id="district"
+                class="form-control"
+              >
+                <option value="Jaffna">Jaffna</option>
+                <option value="Kilinochchi">Kilinochchi</option>
+                <option value="Mannar">Mannar</option>
+                <option value="Mullaitivu">Mullaitivu</option>
+                <option value="Vavuniya">Vavuniya</option>
+                <option value="Puttalam">Puttalam</option>
+                <option value="Kurunegala">Kurunegala</option>
+                <option value="Gampaha">Gampaha</option>
+                <option value="Colombo">Colombo</option>
+                <option value="Kalutara">Kalutara</option>
+                <option value="Anuradhapura">AnuradhapuraPolonnaruwa</option>
+                <option value="Polonnaruwa">Polonnaruwa</option>
+                <option value="Matale">Matale</option>
+                <option value="Kandy">Kandy</option>
+                <option value="Nuwara Eliya">Nuwara Eliya</option>
+                <option value="Kegalle">Kegalle</option>
+                <option value="Ratnapura">Ratnapura</option>
+                <option value="Trincomalee">Trincomalee</option>
+                <option value="Batticaloa">Batticaloa</option>
+                <option value="Ampara">Ampara</option>
+                <option value="Badulla">Badulla</option>
+                <option value="Monaragala">Monaragala</option>
+                <option value="Hambantota">Hambantota</option>
+                <option value="Matara">Matara</option>
+                <option value="Galle">Galle</option>
+              </select>
+            </div>
+          </div>
+          <!-- form-group end.// -->
+
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-outline-dark">
+                Check
+              </button>
+            </div>
+          </div>
+        </form>
+        <flash-messages></flash-messages>
+        <div *ngFor="let camp of selectedBloodCamp">
+          <div class="container">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h5 class="card-title">{{ camp.district }}</h5>
+                    <p>Venue Address: {{ camp.address }}</p>
+                    <p>Date: {{ camp.date }}</p>
+                    <p>Time: {{ camp.time }}</p>
+                  </div>
+                  <div class="col-sm-6">
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFW0bsDYJ1pOQ1xVRaanIOMHYLT2eNoCJ_NzmU8orrVXsD7Ydm"
+                      class="card-img-top"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
